@@ -6,6 +6,7 @@
 
 #include "smf.h"
 #include <stdbool.h>
+#include <stddef.h>
 
 #define SMF_LOG_ENABLE 0
 #if (SMF_LOG_ENABLE == 1)

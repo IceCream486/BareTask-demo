@@ -52,9 +52,13 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/Components/ring_buffer/ring_buffer.c
     # memory management component
     ${CMAKE_SOURCE_DIR}/Components/mm/heap.c
+    # state machine framework component
+    ${CMAKE_SOURCE_DIR}/Components/smf/smf.c
     # scheduler component
     ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task.c
     ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task_port.c
+    # BSP
+    ${CMAKE_SOURCE_DIR}/BSP/Src/KEY.c
     # others
     ${CMAKE_SOURCE_DIR}/APP/system_interrupts.c
     # Add user sources here
@@ -67,6 +71,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/Components/ring_buffer
     ${CMAKE_SOURCE_DIR}/Components/mm
     ${CMAKE_SOURCE_DIR}/BareTask/Inc
+    ${CMAKE_SOURCE_DIR}/Components/smf
+    # BSP include paths
+    ${CMAKE_SOURCE_DIR}/BSP/Inc
     # Add user defined include paths
 )
 

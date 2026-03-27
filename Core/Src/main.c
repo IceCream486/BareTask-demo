@@ -18,10 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "MAIN.h"
+#include "KEY.h"
 #include "dma.h"
-#include "stm32f4xx_hal.h"
-#include "stm32f4xx_hal_gpio.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -29,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "log.h"
 #include "bare_task.h"
+#include "KEY.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,16 +109,20 @@ int main(void)
   /* USER CODE BEGIN 2 */
   log_init();
   bare_task_init();
-  /* USER CODE END 2 */
-  bare_task_create(blue_led_toggle, NULL, 100);
-  bare_task_create(green_led_toggle, NULL, 500);
+  KEY_Init();
+
+  bare_task_create(green_led_toggle, NULL, 100);
+  bare_task_create(blue_led_toggle, NULL, 200);
   bare_task_create(debug_log_task, NULL, 1000);
+  /* USER CODE END 2 */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     bare_task_run();
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
