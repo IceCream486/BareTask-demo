@@ -232,8 +232,8 @@ CMAKE_STRIP:FILEPATH=C:/Users/29733/AppData/Local/stm32cube/bundles/gnu-tools-fo
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=E:/my_github/BareTask/BareTask/cmake/gcc-arm-none-eabi.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=E:/my_github/BareTask/BareTask/cmake/gcc-arm-none-eabi.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console

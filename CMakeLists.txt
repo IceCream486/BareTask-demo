@@ -44,11 +44,29 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    # components sources
+    # log component
+    ${CMAKE_SOURCE_DIR}/Components/log/log.c
+    ${CMAKE_SOURCE_DIR}/Components/log/log_port.c
+    # ring buffer component
+    ${CMAKE_SOURCE_DIR}/Components/ring_buffer/ring_buffer.c
+    # memory management component
+    ${CMAKE_SOURCE_DIR}/Components/mm/heap.c
+    # scheduler component
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task.c
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task_port.c
+    # others
+    ${CMAKE_SOURCE_DIR}/APP/system_interrupts.c
     # Add user sources here
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    # components include paths
+    ${CMAKE_SOURCE_DIR}/Components/log
+    ${CMAKE_SOURCE_DIR}/Components/ring_buffer
+    ${CMAKE_SOURCE_DIR}/Components/mm
+    ${CMAKE_SOURCE_DIR}/BareTask/Inc
     # Add user defined include paths
 )
 

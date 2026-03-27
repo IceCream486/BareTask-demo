@@ -18,13 +18,17 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "MAIN.h"
 #include "dma.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_gpio.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "log.h"
+#include "bare_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,12 +55,25 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+static void green_led_toggle(void* arg);
+static void blue_led_toggle(void* arg);
+static void debug_log_task(void* arg);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+static void green_led_toggle(void* arg)
+{
+  HAL_GPIO_TogglePin(GREEN_GPIO_Port, GREEN_Pin);
+}
+static void blue_led_toggle(void* arg)
+{
+  HAL_GPIO_TogglePin(BLUE_GPIO_Port, BLUE_Pin);
+}
+static void debug_log_task(void* arg)
+{
+  LOG_DEBUG("HELLO WORLD");
+}
 /* USER CODE END 0 */
 
 /**
@@ -91,15 +108,18 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  log_init();
+  bare_task_init();
   /* USER CODE END 2 */
-
+  bare_task_create(blue_led_toggle, NULL, 100);
+  bare_task_create(green_led_toggle, NULL, 500);
+  bare_task_create(debug_log_task, NULL, 1000);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-
+    bare_task_run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
