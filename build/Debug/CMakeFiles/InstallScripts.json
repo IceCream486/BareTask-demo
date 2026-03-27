@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/my_github/BareTask/BareTask/build/Debug/cmake_install.cmake",
+		"E:/my_github/BareTask/BareTask/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
