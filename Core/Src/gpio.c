@@ -59,7 +59,7 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pins : KEY2_Pin KEY3_Pin */
   GPIO_InitStruct.Pin = KEY2_Pin|KEY3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : GREEN_Pin */

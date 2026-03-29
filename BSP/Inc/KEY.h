@@ -24,14 +24,11 @@ typedef enum {
     KEY_MAX_NUM
 } KEY_ID_t;
 
-/* 初始化按键模块 */
+/* init the key module */
 void KEY_Init(void);
 
-/* 获取特定按键的最后一次事件 (调用后会清除该事件) */
+/* get the key event */
 KEY_Event_t KEY_GetEvent(KEY_ID_t key_id);
-
-/* 供 BareTask 调用的扫描任务 */
-void KEY_Scan_Task(void* arg);
 
 #ifdef __cplusplus
 }

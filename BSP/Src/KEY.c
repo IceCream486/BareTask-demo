@@ -6,11 +6,12 @@
 #include "log.h"
 
 extern uint32_t bare_task_get_ms(void);
+static void KEY_Scan_Task(void* arg);
 
 /* --- 配置参数 --- */
-#define TIME_LONG_PRESS_MS    1000  /* 长按判定：100ms */
+#define TIME_LONG_PRESS_MS    500  /* 长按判定：100ms */
 #define TIME_DOUBLE_TAP_MS    200   /* 双击间隔：200ms */
-#define SCAN_PERIOD_MS        20    /* 扫描周期：20ms */
+#define SCAN_PERIOD_MS        10    /* 扫描周期：20ms */
 
 /* --- 内部状态索引 --- */
 enum {
@@ -97,15 +98,6 @@ static const struct smf_state key_fsm[] = {
 /* --- 公开接口 --- */
 
 void KEY_Init(void) {
-    /* 初始化硬件 GPIO */
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    
-    // KEY2: PA1, KEY3: PA4
-    GPIO_InitStruct.Pin = GPIO_PIN_1 | GPIO_PIN_4;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* 为两个按键分配内存 */
     for (int i = 0; i < KEY_MAX_NUM; i++) {

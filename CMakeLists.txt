@@ -57,6 +57,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # scheduler component
     ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task.c
     ${CMAKE_SOURCE_DIR}/BareTask/Src/bare_task_port.c
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/safe_list.c
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/mutex.c
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/safe_queue.c
+    ${CMAKE_SOURCE_DIR}/BareTask/Src/stream_buffer.c
     # BSP
     ${CMAKE_SOURCE_DIR}/BSP/Src/KEY.c
     # others
