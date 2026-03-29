@@ -111,7 +111,7 @@ int main(void)
   KEY_Init();
 
   bare_task_create(green_led_toggle, NULL, 100);
-  bare_task_create(blue_led_toggle, NULL, 200);
+  bare_task_create(blue_led_toggle, NULL, 300);
   bare_task_create(debug_log_task, NULL, 1000);
   /* USER CODE END 2 */
 

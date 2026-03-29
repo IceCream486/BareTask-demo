@@ -1,6 +1,7 @@
 #include "safe_list.h"
 #include "heap.h"
 #include <string.h>
+#include "mutex.h"
 
 /* 外部提供的锁接口，需与 heap.c 中的 HEAP_LOCK 保持一致 */
 extern void bare_task_lock(void);

@@ -84,3 +84,10 @@
 575	949	7964565561993048	cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj	85888baedb302b63
 598	954	7964565562218192	cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj	2b16c703a1b6c3aa
 954	1165	7964565565774342	BareTask.elf	366fd33a8f35b18f
+3	189	7964569358728839	CMakeFiles/BareTask.dir/Core/Src/main.c.obj	989d965242b94d41
+189	395	7964569360596857	BareTask.elf	366fd33a8f35b18f
+3	121	7964570307155127	CMakeFiles/BareTask.dir/BareTask/Src/bare_task.c.obj	79a2d71d2993994d
+121	332	7964570308337117	BareTask.elf	366fd33a8f35b18f
+15	156	7964682368525211	CMakeFiles/BareTask.dir/BareTask/Src/safe_list.c.obj	d2d7af654b6f6cc4
+3	104	7964682718841221	CMakeFiles/BareTask.dir/BareTask/Src/bare_task.c.obj	79a2d71d2993994d
+104	349	7964682719842868	BareTask.elf	366fd33a8f35b18f
